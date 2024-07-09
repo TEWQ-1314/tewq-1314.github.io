@@ -1,0 +1,925 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>GitHub - 标签 | TEWQ</title>
+    <link>https://www.depth.su/tags/github/</link>
+    <description>GitHub - 标签 | TEWQ</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>donghaoran@mail.depth.su (Haoran Dong)</managingEditor>
+      <webMaster>donghaoran@mail.depth.su (Haoran Dong)</webMaster><copyright>本站内容采用 CC BY-NC-SA 4.0 国际许可协议。</copyright><lastBuildDate>Wed, 23 Aug 2023 05:20:00 &#43;0000</lastBuildDate><atom:link href="https://www.depth.su/tags/github/" rel="self" type="application/rss+xml" /><item>
+  <title>在安卓手机上利用Git搭建博客 (完整)</title>
+  <link>https://www.depth.su/posts/git-blog/</link>
+  <pubDate>Wed, 23 Aug 2023 05:20:00 &#43;0000</pubDate>
+  <author>Haoran Dong</author>
+  <guid>https://www.depth.su/posts/git-blog/</guid>
+  <description><![CDATA[<h2 id="简介" class="heading-element"><span>1 简介</span>
+  <a href="#%e7%ae%80%e4%bb%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>本文将使用ZeroTermux＋GitHub ＋ Hexo搭建博客</p>
+<h3 id="zerotermux" class="heading-element"><span>1.1 ZeroTermux</span>
+  <a href="#zerotermux" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><a href="https://termux.dev/"target="_blank" rel="external nofollow noopener noreferrer">Termux<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>是一个Android终端仿真器和Linux环境应用程序，直接工作，无需根目录或设置。一个最小的基本系统被自动安装-额外的软件包可以使用APT软件包管理器来使用。不需要root，运行于内部存储（不在SD卡上). ZeroTermux是Termux的整合版，内置了许多有用的工具</p>
+<p>特性：</p>
+<p>安全：使用 OpenSSH 的 ssh 客户端访问远程服务器。在一个开源解决方案中，Termux 将标准包与精确的终端仿真结合
+在 Bash、FISH 或 Zsh 和 Nano、Emacs 或 Vim 之间选择。GREP 通过你的短信收件箱。使用 cURL 访问 API 端点，并使用 rsync 在远程服务器上存储联系人列表的备份</p>
+<p>自定义：通过从 Debian 和 UbuntuGNU/Linux 中知道的 APT 包管理系统安装你想要的东西</p>
+<p>移植性：Termux 中提供的软件包与 Mac 和 Linux 上的软件包相同
+最新版本的 Perl、Python、Ruby 和 Node.js 都是可用的</p>
+<p>扩大规模：连接蓝牙键盘，并将设备连接到外部显示器，如果需要，Termux 支持键盘快捷键，并有完整的鼠标支持</p>
+<p>可修补的：通过使用 Clang 编译 C 文件进行开发，并使用 CMake 和 pkg-config 构建自己的项目。如果陷入困境并需要调试，GDB 和 strace 都是可用的</p>
+<p>来自<a href="https://www.oschina.net/p/termux?hmsr=aladdin1e1#:~:text=%E7%89%B9%E6%80%A7%EF%BC%9A,strace%20%E9%83%BD%E6%98%AF%E5%8F%AF%E7%94%A8%E7%9A%84"target="_blank" rel="external nofollow noopener noreferrer">开源中国<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<p><a href="https://github.com/termux/termux-app#f-droid"target="_blank" rel="external nofollow noopener noreferrer">官方下载地址<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> <a href="https://github.com/hanxinhao000/ZeroTermux"target="_blank" rel="external nofollow noopener noreferrer">ZeroTermux<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<h3 id="github" class="heading-element"><span>1.2 Github</span>
+  <a href="#github" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><a href="https://github.com"target="_blank" rel="external nofollow noopener noreferrer">GitHub<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>是一个面向开源及私有软件项目的托管平台，因为只支持Git作为唯一的版本库格式进行托管，故名GitHub。GitHub拥有1亿以上的开发人员，400万以上组织机构和3.3亿以上资料库</p>
+<h3 id="hexo" class="heading-element"><span>1.3 Hexo</span>
+  <a href="#hexo" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><a href="https://hexo.io"target="_blank" rel="external nofollow noopener noreferrer">Hexo<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> was originally created and maintained by Tommy Chen in 2012. Since then, it has helped thousands of people to build their dream website/blog.</p>
+<h2 id="下载相关软件包" class="heading-element"><span>2 下载相关软件包</span>
+  <a href="#%e4%b8%8b%e8%bd%bd%e7%9b%b8%e5%85%b3%e8%bd%af%e4%bb%b6%e5%8c%85" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="更新" class="heading-element"><span>2.1 更新</span>
+  <a href="#%e6%9b%b4%e6%96%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt update</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt ugrade</span></span></code></pre></td></tr></table>
+</div>
+</div><p>更新软件包</p>
+<h3 id="换源" class="heading-element"><span>2.2 换源</span>
+  <a href="#%e6%8d%a2%e6%ba%90" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>如果你在国内，建议先更换成国内源，更容易避免很多麻烦</p>
+<h4 id="法一" class="heading-element"><span>2.2.1 法一</span>
+  <a href="#%e6%b3%95%e4%b8%80" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>可以直接执行以下命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sed -i <span class="s1">&#39;s@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main@&#39;</span> <span class="nv">$PREFIX</span>/etc/apt/sources.list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sed -i <span class="s1">&#39;s@^\(deb.*games stable\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/game-packages-24 games stable@&#39;</span> <span class="nv">$PREFIX</span>/etc/apt/sources.list.d/game.list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sed -i <span class="s1">&#39;s@^\(deb.*science stable\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/science-packages-24 science stable@&#39;</span> <span class="nv">$PREFIX</span>/etc/apt/sources.list.d/science.list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">pkg update</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="法二" class="heading-element"><span>2.2.2 法二</span>
+  <a href="#%e6%b3%95%e4%ba%8c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>手动修改配置文件
+请使用内置或安装在 Termux 里的文本编辑器，例如 vi / vim / nano 等直接编辑源文件，不要使用 RE 管理器等其他具有 ROOT 权限的外部 APP 来修改 Termux 的文件</p>
+<p>编辑</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">$PREFIX</span>/etc/apt/sources.list</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改为如下内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># The termux repository mirror from TUNA:</span>
+</span></span><span class="line"><span class="cl">deb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main</span></span></code></pre></td></tr></table>
+</div>
+</div><p>编辑</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">$PREFIX</span>/etc/apt/sources.list.d/science.list </span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改为如下内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># The termux repository mirror from TUNA:</span>
+</span></span><span class="line"><span class="cl">deb https://mirrors.tuna.tsinghua.edu.cn/termux/science-packages-24 science stable</span></span></code></pre></td></tr></table>
+</div>
+</div><p>编辑</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">$PREFIX</span>/etc/apt/sources.list.d/game.list </span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改为如下内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># The termux repository mirror from TUNA:</span>
+</span></span><span class="line"><span class="cl">deb https://mirrors.tuna.tsinghua.edu.cn/termux/game-packages-24 games stable</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="法三" class="heading-element"><span>2.2.3 法三</span>
+  <a href="#%e6%b3%95%e4%b8%89" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>查看当前源列表</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt sources</span></span></code></pre></td></tr></table>
+</div>
+</div><p>//使用清华大学的源</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pkg install tsinghua.sources
+</span></span><span class="line"><span class="cl">tsinghua.sources</span></span></code></pre></td></tr></table>
+</div>
+</div><p>//使用中科大的源</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pkg install ustc.sources
+</span></span><span class="line"><span class="cl">ustc.sources</span></span></code></pre></td></tr></table>
+</div>
+</div><p>//使用阿里云的源</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pkg install aliyun.sources
+</span></span><span class="line"><span class="cl">aliyun.sources</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在ZeroTermux中，我们使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pkg install 包名</span></span></code></pre></td></tr></table>
+</div>
+</div><p>来进行安装，例如我们会用到的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pkg install vim</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pkg install git</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pkg install openssh</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="登录github并建立博客仓库" class="heading-element"><span>3 登录GitHub并建立博客仓库</span>
+  <a href="#%e7%99%bb%e5%bd%95github%e5%b9%b6%e5%bb%ba%e7%ab%8b%e5%8d%9a%e5%ae%a2%e4%bb%93%e5%ba%93" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>参考文章<a href="https://pages.github.com/"target="_blank" rel="external nofollow noopener noreferrer">Github Page<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<h2 id="将仓库连接到本地" class="heading-element"><span>4 将仓库连接到本地</span>
+  <a href="#%e5%b0%86%e4%bb%93%e5%ba%93%e8%bf%9e%e6%8e%a5%e5%88%b0%e6%9c%ac%e5%9c%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>参考文章<a href="https://www.depth.su/2023/07/25/2/"target="_blank" rel="external nofollow noopener noreferrer">How to Edit and Upload Code on Local Device to Github<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<p>这一步不知道是否可以省略，大家有兴趣可以试着跳过这一步，看后来部署时是否会报错，欢迎评论区留言</p>
+<h2 id="安装hexo" class="heading-element"><span>5 安装Hexo</span>
+  <a href="#%e5%ae%89%e8%a3%85hexo" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="安装-node-js" class="heading-element"><span>5.1 安装 Node JS</span>
+  <a href="#%e5%ae%89%e8%a3%85-node-js" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>因为Hexo使用的是npm的仓库，所以需要先安装Node JS</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pkg install nodejs</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="换源大陆用户" class="heading-element"><span>5.2 换源（大陆用户）</span>
+  <a href="#%e6%8d%a2%e6%ba%90%e5%a4%a7%e9%99%86%e7%94%a8%e6%88%b7" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm config <span class="nb">set</span> registry https://registry.npm.taobao.org</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="更新-1" class="heading-element"><span>5.3 更新</span>
+  <a href="#%e6%9b%b4%e6%96%b0-1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm upgrade -g</span></span></code></pre></td></tr></table>
+</div>
+</div><p>检查是否有新版本，并执行相应的更新命令（它会提示你如何更新）<br>
+例如
+<a class="lightgallery" href="https://pic.imgdb.cn/item/64d2ee7d1ddac507ccbdf1b3.jpg?size=large" data-thumbnail="https://pic.imgdb.cn/item/64d2ee7d1ddac507ccbdf1b3.jpg?size=small" data-sub-html="<h2>https://pic.imgdb.cn/item/64d2ee7d1ddac507ccbdf1b3.jpg</h2>"><img loading="lazy" src="https://pic.imgdb.cn/item/64d2ee7d1ddac507ccbdf1b3.jpg" alt="https://pic.imgdb.cn/item/64d2ee7d1ddac507ccbdf1b3.jpg" srcset="https://pic.imgdb.cn/item/64d2ee7d1ddac507ccbdf1b3.jpg?size=small, https://pic.imgdb.cn/item/64d2ee7d1ddac507ccbdf1b3.jpg?size=medium 1.5x, https://pic.imgdb.cn/item/64d2ee7d1ddac507ccbdf1b3.jpg?size=large 2x" data-title="https://pic.imgdb.cn/item/64d2ee7d1ddac507ccbdf1b3.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install -g npm@9.8.1</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="正式安装" class="heading-element"><span>5.4 正式安装</span>
+  <a href="#%e6%ad%a3%e5%bc%8f%e5%ae%89%e8%a3%85" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install hexo-cli -g
+</span></span><span class="line"><span class="cl">hexo init blog
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> blog
+</span></span><span class="line"><span class="cl">npm install
+</span></span><span class="line"><span class="cl">hexo server</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我这里网络不好有一些报错，不过最后还是完成了安装，这时我们可以通过</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">http://localhost:4000/</span></span></code></pre></td></tr></table>
+</div>
+</div><p>来查看是否安装成功
+<a class="lightgallery" href="https://pic.imgdb.cn/item/64d2ef8a1ddac507ccc01257.jpg?size=large" data-thumbnail="https://pic.imgdb.cn/item/64d2ef8a1ddac507ccc01257.jpg?size=small" data-sub-html="<h2>https://pic.imgdb.cn/item/64d2ef8a1ddac507ccc01257.jpg</h2>"><img loading="lazy" src="https://pic.imgdb.cn/item/64d2ef8a1ddac507ccc01257.jpg" alt="https://pic.imgdb.cn/item/64d2ef8a1ddac507ccc01257.jpg" srcset="https://pic.imgdb.cn/item/64d2ef8a1ddac507ccc01257.jpg?size=small, https://pic.imgdb.cn/item/64d2ef8a1ddac507ccc01257.jpg?size=medium 1.5x, https://pic.imgdb.cn/item/64d2ef8a1ddac507ccc01257.jpg?size=large 2x" data-title="https://pic.imgdb.cn/item/64d2ef8a1ddac507ccc01257.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h2 id="设置主题" class="heading-element"><span>6 设置主题</span>
+  <a href="#%e8%ae%be%e7%bd%ae%e4%b8%bb%e9%a2%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>Hexo有许多好看实用的<a href="https://hexo.io/themes/"target="_blank" rel="external nofollow noopener noreferrer">主题<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>，有时间的朋友可以花时间慢慢探索，这里以<a href="https://github.com/lh1me/hexo-theme-aomori"target="_blank" rel="external nofollow noopener noreferrer">Aomori<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>为例。
+可以使用Aomori官方给出的指令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm i hexo-theme-aomori --save</span></span></code></pre></td></tr></table>
+</div>
+</div><p>并且编辑blog目录下的_config.yml</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">theme: aomori</span></span></code></pre></td></tr></table>
+</div>
+</div><p>你可以参考你的主题的文档或你的WEB开发知识，不断完善你的网站</p>
+<h2 id="新建文章" class="heading-element"><span>7 新建文章</span>
+  <a href="#%e6%96%b0%e5%bb%ba%e6%96%87%e7%ab%a0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>Hexo使用markdown来编写文章，你可以在网上找到很多教程，不得不承认这比HTML方便很多。</p>
+<p>若新建名为page的文章。
+在blog目录下输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hexo new page</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这会在blog/soure/_posts下生成对应的page.md</p>
+<h2 id="撰写文章" class="heading-element"><span>8 撰写文章</span>
+  <a href="#%e6%92%b0%e5%86%99%e6%96%87%e7%ab%a0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>在手机上我们建议使用第三方文本编辑器来编写 ，有语法高亮首选，例如QuickEdit Text Editor，termux一般会在系统文件夹里提供一个可供访问的端口，这样即使手机未取得root权限也能编辑该md文件，例如
+<a class="lightgallery" href="https://pic.imgdb.cn/item/64d2efac1ddac507ccc05e29.jpg?size=large" data-thumbnail="https://pic.imgdb.cn/item/64d2efac1ddac507ccc05e29.jpg?size=small" data-sub-html="<h2>https://pic.imgdb.cn/item/64d2efac1ddac507ccc05e29.jpg</h2>"><img loading="lazy" src="https://pic.imgdb.cn/item/64d2efac1ddac507ccc05e29.jpg" alt="https://pic.imgdb.cn/item/64d2efac1ddac507ccc05e29.jpg" srcset="https://pic.imgdb.cn/item/64d2efac1ddac507ccc05e29.jpg?size=small, https://pic.imgdb.cn/item/64d2efac1ddac507ccc05e29.jpg?size=medium 1.5x, https://pic.imgdb.cn/item/64d2efac1ddac507ccc05e29.jpg?size=large 2x" data-title="https://pic.imgdb.cn/item/64d2efac1ddac507ccc05e29.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h2 id="调试" class="heading-element"><span>9 调试</span>
+  <a href="#%e8%b0%83%e8%af%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hexo clean</span></span></code></pre></td></tr></table>
+</div>
+</div><p>清除缓存</p>
+<p>输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hexo g</span></span></code></pre></td></tr></table>
+</div>
+</div><p>将md文件自动转换成网页<br>
+输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hexo s</span></span></code></pre></td></tr></table>
+</div>
+</div><p>开启本地端口，这时你可以通过</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">http://localhost:4000/</span></span></code></pre></td></tr></table>
+</div>
+</div><p>来查看你的网站和文章是否有格式错误并进行调整</p>
+<h2 id="部署" class="heading-element"><span>10 部署</span>
+  <a href="#%e9%83%a8%e7%bd%b2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>修改blog目录下的网站配置文件_config.yml，编辑以下内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># URL</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">url: https://your-username.github.io
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">root: /
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Deployment</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">deploy:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> type: git
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> repository: https://github.com/your-username/your-username.github.io.git
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> branch: master
+</span></span><span class="line"><span class="cl"> </span></span></code></pre></td></tr></table>
+</div>
+</div><p>把上述的链接地址修改成你自己的
+然后输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hexo d</span></span></code></pre></td></tr></table>
+</div>
+</div><p>输入用户名和密码就可以完成部署，这时使用访问对应的GitHub Page网页就是你的博客了</p>
+<h2 id="常见报错及提醒" class="heading-element"><span>11 常见报错及提醒</span>
+  <a href="#%e5%b8%b8%e8%a7%81%e6%8a%a5%e9%94%99%e5%8f%8a%e6%8f%90%e9%86%92" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="git" class="heading-element"><span>11.1 Git</span>
+  <a href="#git" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>执行git命令出现错误一般是网络问题，使用代理或换个网络一般就能解决</p>
+<h3 id="npm" class="heading-element"><span>11.2 NPM</span>
+  <a href="#npm" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>同git，如果出现进度条长时间不动可以试试把后台删了重新执行该命令</p>
+<h3 id="vimhttpswwwvimorg" class="heading-element"><span>11.3 <a href="https://www.vim.org/"target="_blank" rel="external nofollow noopener noreferrer">VIM<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></span>
+  <a href="#vimhttpswwwvimorg" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>基本命令</p>
+<p>以下是一些基本的Vim命令：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">ESC +</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">i</td>
+<td style="text-align:left">在当前光标位置插入文本。</td>
+</tr>
+<tr>
+<td style="text-align:left">x</td>
+<td style="text-align:left">删除当前光标所在位置的字符。</td>
+</tr>
+<tr>
+<td style="text-align:left">:w</td>
+<td style="text-align:left">保存文件。</td>
+</tr>
+<tr>
+<td style="text-align:left">:q</td>
+<td style="text-align:left">退出Vim编辑器。</td>
+</tr>
+<tr>
+<td style="text-align:left">:q!</td>
+<td style="text-align:left">强制退出Vim编辑器，不保存文件。</td>
+</tr>
+<tr>
+<td style="text-align:left">:wq</td>
+<td style="text-align:left">保存文件并退出Vim编辑器。</td>
+</tr>
+<tr>
+<td style="text-align:left">:wq!</td>
+<td style="text-align:left">强制保存并退出。</td>
+</tr>
+<tr>
+<td style="text-align:left">dd</td>
+<td style="text-align:left">删除当前行。</td>
+</tr>
+<tr>
+<td style="text-align:left">yy</td>
+<td style="text-align:left">复制当前行。</td>
+</tr>
+<tr>
+<td style="text-align:left">p</td>
+<td style="text-align:left">粘贴已复制或删除的文本。</td>
+</tr>
+<tr>
+<td style="text-align:left">u</td>
+<td style="text-align:left">撤销上一次操作。</td>
+</tr>
+<tr>
+<td style="text-align:left">r</td>
+<td style="text-align:left">替换当前光标所在位置的字符。</td>
+</tr>
+<tr>
+<td style="text-align:left">c</td>
+<td style="text-align:left">删除从当前光标位置到指定位置的文本并进入插入模式。</td>
+</tr>
+<tr>
+<td style="text-align:left">v</td>
+<td style="text-align:left">进入可视模式，选择文本。</td>
+</tr>
+<tr>
+<td style="text-align:left">:s/<old>/<new>/g</td>
+<td style="text-align:left">将当前行中的<old>替换为<new>。</td>
+</tr>
+<tr>
+<td style="text-align:left">:%s/<old>/<new>/g</td>
+<td style="text-align:left">将整个文件中的<old>替换为<new>。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="markdown" class="heading-element"><span>11.4 Markdown</span>
+  <a href="#markdown" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>常用语法</p>
+<h4 id="标题" class="heading-element"><span>11.4.1 标题</span>
+  <a href="#%e6%a0%87%e9%a2%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 一级标题</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## 二级标题</span>
+</span></span><span class="line"><span class="cl"><span class="c1">### 三级标题</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#### 四级标题</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##### 五级标题</span>
+</span></span><span class="line"><span class="cl"><span class="c1">###### 六级标题</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="文本" class="heading-element"><span>11.4.2 文本</span>
+  <a href="#%e6%96%87%e6%9c%ac" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>就按普通文本一样直接写</p>
+<h4 id="链接" class="heading-element"><span>11.4.3 链接</span>
+  <a href="#%e9%93%be%e6%8e%a5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>链接文字<span class="o">](</span>链接地址<span class="o">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="图片" class="heading-element"><span>11.4.4 图片</span>
+  <a href="#%e5%9b%be%e7%89%87" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>图片名字可有可无，图片地址你可以使用网站素材文件夹里图片的地址，也可以使用在线图床的网址</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">!<span class="o">[</span>图片名字<span class="o">](</span>图片地址<span class="o">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>其他语法请自寻查找，另外markdown有着十分严格的语法规定，所以在编辑文件时请注意你的缩进，例如我在文章中添加一个多余缩进，再执行hexo＋ g命令，则会出现报错</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">╭─u0_a276 at localhost in ~/blog 23-08-09 - 10:47:20
+</span></span><span class="line"><span class="cl">╰─○ hexo g
+</span></span><span class="line"><span class="cl">INFO  Validating config
+</span></span><span class="line"><span class="cl">INFO  Start processing
+</span></span><span class="line"><span class="cl">ERROR Process failed: _posts/hello-world.md
+</span></span><span class="line"><span class="cl">YAMLException: end of the stream or a document separator is expected <span class="o">(</span>1:10<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="m">1</span> <span class="p">|</span>    →title: Hello World
+</span></span><span class="line"><span class="cl">--------------^
+</span></span><span class="line"><span class="cl">    at generateError <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/js-yaml/lib/loader.js:183:10<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at throwError <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/js-yaml/lib/loader.js:187:9<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at readDocument <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/js-yaml/lib/loader.js:1645:5<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at loadDocuments <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/js-yaml/lib/loader.js:1688:5<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at Object.load <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/js-yaml/lib/loader.js:1714:19<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at parseYAML <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/hexo-front-matter/lib/front_matter.js:69:23<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at parse <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/hexo-front-matter/lib/front_matter.js:50:12<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at /data/data/com.termux/files/home/blog/node_modules/hexo/lib/plugins/processor/post.js:93:18
+</span></span><span class="line"><span class="cl">    at tryCatcher <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/bluebird/js/release/util.js:16:23<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at Promise._settlePromiseFromHandler <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/bluebird/js/release/promise.js:544:35<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at Promise._settlePromise <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/bluebird/js/release/promise.js:604:18<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at Promise._settlePromise0 <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/bluebird/js/release/promise.js:649:10<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at Promise._settlePromises <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/bluebird/js/release/promise.js:729:18<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at Promise._fulfill <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/bluebird/js/release/promise.js:673:18<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at PromiseArray._resolve <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/bluebird/js/release/promise_array.js:127:19<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at PromiseArray._promiseFulfilled <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/bluebird/js/release/promise_array.js:145:14<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at PromiseArray._iterate <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/bluebird/js/release/promise_array.js:115:31<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at PromiseArray.init <span class="o">[</span>as _init<span class="o">]</span> <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/bluebird/js/release/promise_array.js:79:10<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at Promise._settlePromise <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/bluebird/js/release/promise.js:601:21<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at Promise._settlePromise0 <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/bluebird/js/release/promise.js:649:10<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at Promise._settlePromises <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/bluebird/js/release/promise.js:729:18<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at Promise._fulfill <span class="o">(</span>/data/data/com.termux/files/home/blog/node_modules/bluebird/js/release/promise.js:673:18<span class="o">)</span>
+</span></span><span class="line"><span class="cl">INFO  Files loaded in <span class="m">182</span> ms
+</span></span><span class="line"><span class="cl">INFO  <span class="m">0</span> files generated in <span class="m">66</span> ms
+</span></span><span class="line"><span class="cl">╭─u0_a276 at localhost in ~/blog 23-08-09 - 10:48:30
+</span></span><span class="line"><span class="cl">╰─○</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此时只需要删除或添加它提到的地方的缩进就可以了</p>
+<h3 id="部署时报错" class="heading-element"><span>11.5 部署时报错</span>
+  <a href="#%e9%83%a8%e7%bd%b2%e6%97%b6%e6%8a%a5%e9%94%99" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>部署时输入GitHub用户名和GitHub密码后出现如下报错</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">╭─u0_a276 at localhost in ~/ET 23-08-09 - 11:10:41
+</span></span><span class="line"><span class="cl">╰─○ hexo d
+</span></span><span class="line"><span class="cl">INFO  Validating config
+</span></span><span class="line"><span class="cl"><span class="nv">INFO</span>
+</span></span><span class="line"><span class="cl"> <span class="o">===================================================================</span>
+</span></span><span class="line"><span class="cl">     <span class="c1">#####  #    # ##### ##### ###### #####  ###### #      #   #</span>
+</span></span><span class="line"><span class="cl">     <span class="c1">#    # #    #   #     #   #      #    # #      #       # #</span>
+</span></span><span class="line"><span class="cl">     <span class="c1">#####  #    #   #     #   #####  #    # #####  #        #</span>
+</span></span><span class="line"><span class="cl">     <span class="c1">#    # #    #   #     #   #      #####  #      #        #</span>
+</span></span><span class="line"><span class="cl">     <span class="c1">#    # #    #   #     #   #      #   #  #      #        #</span>
+</span></span><span class="line"><span class="cl">     <span class="c1">#####   ####    #     #   ###### #    # #      ######   #</span>
+</span></span><span class="line"><span class="cl">                           4.9.0
+</span></span><span class="line"><span class="cl"> <span class="o">===================================================================</span>
+</span></span><span class="line"><span class="cl">INFO  Deploying: git
+</span></span><span class="line"><span class="cl">INFO  Clearing .deploy_git folder...
+</span></span><span class="line"><span class="cl">INFO  Copying files from public folder...
+</span></span><span class="line"><span class="cl">INFO  Copying files from extend dirs...
+</span></span><span class="line"><span class="cl">On branch master
+</span></span><span class="line"><span class="cl">nothing to commit, working tree clean
+</span></span><span class="line"><span class="cl">Username <span class="k">for</span> <span class="s1">&#39;https://github.com&#39;</span>: inagiaden
+</span></span><span class="line"><span class="cl">Password <span class="k">for</span> <span class="s1">&#39;https://inagiaden@github.com&#39;</span>:
+</span></span><span class="line"><span class="cl">remote: Support <span class="k">for</span> password authentication was removed on August 13, 2021.
+</span></span><span class="line"><span class="cl">remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls <span class="k">for</span> information on currently recommended modes of authentication.
+</span></span><span class="line"><span class="cl">fatal: Authentication failed <span class="k">for</span> <span class="s1">&#39;https://github.com/inagiaden/inagiaden.github.io.git/&#39;</span>
+</span></span><span class="line"><span class="cl">FATAL Something<span class="err">&#39;</span>s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
+</span></span><span class="line"><span class="cl">Error: Spawn failed
+</span></span><span class="line"><span class="cl">   at ChildProcess.&lt;anonymous&gt; <span class="o">(</span>/data/data/com.termux/files/home/ET/node_modules/hexo-util/lib/spawn.js:51:21<span class="o">)</span>
+</span></span><span class="line"><span class="cl">   at ChildProcess.emit <span class="o">(</span>node:events:513:28<span class="o">)</span>
+</span></span><span class="line"><span class="cl">   at ChildProcess._handle.onexit <span class="o">(</span>node:internal/child_process:291:12<span class="o">)</span>
+</span></span><span class="line"><span class="cl">╭─u0_a276 at localhost in ~/ET 23-08-09 - 11:11:23
+</span></span><span class="line"><span class="cl">╰─○</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这是因为2021年后，使用第三方上传密码时需要专用的密码</p>
+<h4 id="解决办法" class="heading-element"><span>11.5.1 解决办法</span>
+  <a href="#%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>登录GitHub&ndash;&gt;  Settings &ndash;&gt; Developer Settings -&gt; Personal access tokens &ndash;&gt; Tokens &ndash;&gt; Generate new token &ndash;&gt; Generate new token (classic) &ndash;&gt; Note: ZeroTermux  Expiration：No expiration Select scopes：select all &ndash;&gt;Generate  token<br>
+复制出现的密码（建议固定到剪切板，因为只出现一次）输入密码时将此输入就行了</p>
+<h4 id="注意" class="heading-element"><span>11.5.2 注意</span>
+  <a href="#%e6%b3%a8%e6%84%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>每一次部署，hexo都会清空原来的GitHub Page仓库，所以请不要直接用浏览器向GitHub Page仓库手动添加文件</p>
+]]></description>
+</item>
+<item>
+  <title>How to Edit and Upload Code on Local Device to Github</title>
+  <link>https://www.depth.su/posts/2/</link>
+  <pubDate>Tue, 25 Jul 2023 00:08:36 &#43;0000</pubDate>
+  <author>Haoran Dong</author>
+  <guid>https://www.depth.su/posts/2/</guid>
+  <description><![CDATA[<h3 id="preparation-tools" class="heading-element"><span>0.1 Preparation tools:</span>
+  <a href="#preparation-tools" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>.A computer<br>
+.A github account</p>
+<p>// This article uses Linux as an example, and the whole process is in a root environment.</p>
+<h3 id="安装git" class="heading-element"><span>0.2 安装Git</span>
+  <a href="#%e5%ae%89%e8%a3%85git" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Use</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git --version</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhVyJa.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhVyJa.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhVyJa.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhVyJa.jpg" alt="https://i.imgtg.com/2023/07/25/OhVyJa.jpg" srcset="https://i.imgtg.com/2023/07/25/OhVyJa.jpg?size=small, https://i.imgtg.com/2023/07/25/OhVyJa.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhVyJa.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhVyJa.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+to see if Git is installed</p>
+<h3 id="配置" class="heading-element"><span>0.3 配置</span>
+  <a href="#%e9%85%8d%e7%bd%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><h4 id="创建密钥" class="heading-element"><span>0.3.1 创建密钥</span>
+  <a href="#%e5%88%9b%e5%bb%ba%e5%af%86%e9%92%a5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Create the SSH Key of the project</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-keygen -t rsa -C <span class="s2">&#34;youremail@example.com&#34;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhVgfS.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhVgfS.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhVgfS.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhVgfS.jpg" alt="https://i.imgtg.com/2023/07/25/OhVgfS.jpg" srcset="https://i.imgtg.com/2023/07/25/OhVgfS.jpg?size=small, https://i.imgtg.com/2023/07/25/OhVgfS.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhVgfS.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhVgfS.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+Just press Enter three times and the key will be stored in the default location.<br>
+Enter the path to view the key</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /root/.ssh</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="复制密钥" class="heading-element"><span>0.3.2 复制密钥</span>
+  <a href="#%e5%a4%8d%e5%88%b6%e5%af%86%e9%92%a5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>After the creation is complete, find the .ssh directory in the user&rsquo;s home directory. There are two files, id_rsa and id_rsa.pub. These two are the secret key pair of SSH Key. id_rsa is the private key and cannot be disclosed. id_rsa.pub is the public key. Key, you can safely tell anyone.<br>
+Execute</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim id_rsa.pub </span></span></code></pre></td></tr></table>
+</div>
+</div><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhVpBN.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhVpBN.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhVpBN.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhVpBN.jpg" alt="https://i.imgtg.com/2023/07/25/OhVpBN.jpg" srcset="https://i.imgtg.com/2023/07/25/OhVpBN.jpg?size=small, https://i.imgtg.com/2023/07/25/OhVpBN.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhVpBN.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhVpBN.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+to open the public key and copy its content.
+<a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhVJKC.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhVJKC.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhVJKC.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhVJKC.jpg" alt="https://i.imgtg.com/2023/07/25/OhVJKC.jpg" srcset="https://i.imgtg.com/2023/07/25/OhVJKC.jpg?size=small, https://i.imgtg.com/2023/07/25/OhVJKC.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhVJKC.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhVJKC.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h4 id="添加密钥" class="heading-element"><span>0.3.3 添加密钥</span>
+  <a href="#%e6%b7%bb%e5%8a%a0%e5%af%86%e9%92%a5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Log in to github to register or log in to your account, open the &ldquo;SSH Keys&rdquo; page of &ldquo;settings&rdquo;, then click &ldquo;New SSH Key&rdquo;, fill in any Title, paste the content of the id_rsa.pub file in the Key text box, and click &ldquo;Add Key&rdquo;, you should see the added Key
+<a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhVP0L.png?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhVP0L.png?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhVP0L.png</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhVP0L.png" alt="https://i.imgtg.com/2023/07/25/OhVP0L.png" srcset="https://i.imgtg.com/2023/07/25/OhVP0L.png?size=small, https://i.imgtg.com/2023/07/25/OhVP0L.png?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhVP0L.png?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhVP0L.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+Note that it is SSH, not GPG
+<a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhVQlU.png?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhVQlU.png?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhVQlU.png</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhVQlU.png" alt="https://i.imgtg.com/2023/07/25/OhVQlU.png" srcset="https://i.imgtg.com/2023/07/25/OhVQlU.png?size=small, https://i.imgtg.com/2023/07/25/OhVQlU.png?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhVQlU.png?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhVQlU.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhVVMc.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhVVMc.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhVVMc.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhVVMc.jpg" alt="https://i.imgtg.com/2023/07/25/OhVVMc.jpg" srcset="https://i.imgtg.com/2023/07/25/OhVVMc.jpg?size=small, https://i.imgtg.com/2023/07/25/OhVVMc.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhVVMc.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhVVMc.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h4 id="添加用户信息" class="heading-element"><span>0.3.4 添加用户信息</span>
+  <a href="#%e6%b7%bb%e5%8a%a0%e7%94%a8%e6%88%b7%e4%bf%a1%e6%81%af" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Configure username and email</p>
+<p>Configure user name:
+git config &ndash;global user.name (user name registered on github)</p>
+<p>Configure user email:
+git config &ndash;global user.email (the email address when registering on GitHub)
+<a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhVcZv.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhVcZv.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhVcZv.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhVcZv.jpg" alt="https://i.imgtg.com/2023/07/25/OhVcZv.jpg" srcset="https://i.imgtg.com/2023/07/25/OhVcZv.jpg?size=small, https://i.imgtg.com/2023/07/25/OhVcZv.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhVcZv.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhVcZv.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;yourusername&#34;</span>
+</span></span><span class="line"><span class="cl">git config --global user.email <span class="s2">&#34;youremail@example.com&#34;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Log in to your github account and create a new repository.
+<a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhVdcq.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhVdcq.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhVdcq.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhVdcq.jpg" alt="https://i.imgtg.com/2023/07/25/OhVdcq.jpg" srcset="https://i.imgtg.com/2023/07/25/OhVdcq.jpg?size=small, https://i.imgtg.com/2023/07/25/OhVdcq.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhVdcq.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhVdcq.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhVY7r.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhVY7r.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhVY7r.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhVY7r.jpg" alt="https://i.imgtg.com/2023/07/25/OhVY7r.jpg" srcset="https://i.imgtg.com/2023/07/25/OhVY7r.jpg?size=small, https://i.imgtg.com/2023/07/25/OhVY7r.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhVY7r.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhVY7r.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h4 id="测试" class="heading-element"><span>0.3.5 测试</span>
+  <a href="#%e6%b5%8b%e8%af%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Go to the repository and copy the HTTPS address of the repository.
+<a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhV2JI.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhV2JI.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhV2JI.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhV2JI.jpg" alt="https://i.imgtg.com/2023/07/25/OhV2JI.jpg" srcset="https://i.imgtg.com/2023/07/25/OhV2JI.jpg?size=small, https://i.imgtg.com/2023/07/25/OhV2JI.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhV2JI.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhV2JI.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+Git local files to GitHub remote warehouse
+Create a TEST folder locally and enter</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir TEST</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhVlXG.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhVlXG.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhVlXG.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhVlXG.jpg" alt="https://i.imgtg.com/2023/07/25/OhVlXG.jpg" srcset="https://i.imgtg.com/2023/07/25/OhVlXG.jpg?size=small, https://i.imgtg.com/2023/07/25/OhVlXG.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhVlXG.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhVlXG.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h4 id="准备上传" class="heading-element"><span>0.3.6 准备上传</span>
+  <a href="#%e5%87%86%e5%a4%87%e4%b8%8a%e4%bc%a0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Create and edit a file named hello.txt(Please search online for how to use VIM.  And you can use other editors for editing, such as Vscode, Atom.)
+<a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhVjz1.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhVjz1.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhVjz1.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhVjz1.jpg" alt="https://i.imgtg.com/2023/07/25/OhVjz1.jpg" srcset="https://i.imgtg.com/2023/07/25/OhVjz1.jpg?size=small, https://i.imgtg.com/2023/07/25/OhVjz1.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhVjz1.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhVjz1.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+Back to the terminal command window, initialize the current directory as a version library, add a remote warehouse and synchronize with the local, enter the command as shown below</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git remote add origin https://github.com/****.git
+</span></span><span class="line"><span class="cl">git pull --rebase origin master</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhVXTF.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhVXTF.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhVXTF.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhVXTF.jpg" alt="https://i.imgtg.com/2023/07/25/OhVXTF.jpg" srcset="https://i.imgtg.com/2023/07/25/OhVXTF.jpg?size=small, https://i.imgtg.com/2023/07/25/OhVXTF.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhVXTF.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhVXTF.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+//Because I didn&rsquo;t add a readme file when I created it, there are some caveats, so I don&rsquo;t care about them here.</p>
+<h4 id="上传文件" class="heading-element"><span>0.3.7 上传文件</span>
+  <a href="#%e4%b8%8a%e4%bc%a0%e6%96%87%e4%bb%b6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>Submit the created hello.txt to the remote warehouse and enter the command as shown below</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git add hello.txt
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;first commit&#34;</span>
+</span></span><span class="line"><span class="cl">git push origin master</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhV6lD.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhV6lD.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhV6lD.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhV6lD.jpg" alt="https://i.imgtg.com/2023/07/25/OhV6lD.jpg" srcset="https://i.imgtg.com/2023/07/25/OhV6lD.jpg?size=small, https://i.imgtg.com/2023/07/25/OhV6lD.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhV6lD.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhV6lD.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+Because it is the first time to use, so you need to verify the password and user name.</p>
+<p>Now we can log in to github and view it.</p>
+]]></description>
+</item>
+</channel>
+</rss>

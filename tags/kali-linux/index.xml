@@ -1,0 +1,137 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Kali Linux - 标签 | TEWQ</title>
+    <link>https://www.depth.su/tags/kali-linux/</link>
+    <description>Kali Linux - 标签 | TEWQ</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>donghaoran@mail.depth.su (Haoran Dong)</managingEditor>
+      <webMaster>donghaoran@mail.depth.su (Haoran Dong)</webMaster><copyright>本站内容采用 CC BY-NC-SA 4.0 国际许可协议。</copyright><lastBuildDate>Tue, 25 Jul 2023 10:08:07 &#43;0000</lastBuildDate><atom:link href="https://www.depth.su/tags/kali-linux/" rel="self" type="application/rss+xml" /><item>
+  <title>如何在Android设备上安装Kali Linux系统(不ROOT)</title>
+  <link>https://www.depth.su/posts/kaliandroid/</link>
+  <pubDate>Tue, 25 Jul 2023 10:08:07 &#43;0000</pubDate>
+  <author>Haoran Dong</author>
+  <guid>https://www.depth.su/posts/kaliandroid/</guid>
+  <description><![CDATA[<p>本文是通过在Android上构建Linux Arm64系统版本实现，所以仅对Android设备有效，因为Android是基于Linux开源的，所以可以安装Linux发行版。
+准备工作</p>
+<pre><code>  Termux，Play商店或[ZeroTermux](https://od.ixcmstudio.cn/repository/main/ZeroTermux/)代替
+  VNC Viewer ,Play商店
+  Android手机，不用ROOT
+  20G空余内存(最低10G),4G以上运行内存
+  流畅的网络环境
+</code></pre>
+<p>本教程以Kali Linux为例，至于其他Linux发行版，感兴趣的朋友可以上网查查.</p>
+<h2 id="官方版本" class="heading-element"><span>1 官方版本</span>
+  <a href="#%e5%ae%98%e6%96%b9%e7%89%88%e6%9c%ac" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="更新termux" class="heading-element"><span>1.1 更新Termux</span>
+  <a href="#%e6%9b%b4%e6%96%b0termux" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>打开Termux，输入。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pkg update
+</span></span><span class="line"><span class="cl">pkg upgrade</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhYkOL.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhYkOL.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhYkOL.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhYkOL.jpg" alt="https://i.imgtg.com/2023/07/25/OhYkOL.jpg" srcset="https://i.imgtg.com/2023/07/25/OhYkOL.jpg?size=small, https://i.imgtg.com/2023/07/25/OhYkOL.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhYkOL.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhYkOL.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+更新软件包.</p>
+<h3 id="下载脚本" class="heading-element"><span>1.2 下载脚本</span>
+  <a href="#%e4%b8%8b%e8%bd%bd%e8%84%9a%e6%9c%ac" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>下载wget(下载工具)，使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install wget</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhYxNi.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhYxNi.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhYxNi.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhYxNi.jpg" alt="https://i.imgtg.com/2023/07/25/OhYxNi.jpg" srcset="https://i.imgtg.com/2023/07/25/OhYxNi.jpg?size=small, https://i.imgtg.com/2023/07/25/OhYxNi.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhYxNi.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhYxNi.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+如果下载过程中有询问就输入y然后回车</p>
+<p>Kali Linux Android官方的下载指令是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget -O install-nethunter-termux https://offs.ec/2MceZWr</span></span></code></pre></td></tr></table>
+</div>
+</div><p>等待它下载完我们会得到一个叫install-nethunter-termux的脚本</p>
+<h3 id="执行脚本" class="heading-element"><span>1.3 执行脚本</span>
+  <a href="#%e6%89%a7%e8%a1%8c%e8%84%9a%e6%9c%ac" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>我们输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> chmod +x install-nethunter-termux</span></span></code></pre></td></tr></table>
+</div>
+</div><p>把它转换成可执行文件，然后 输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./install-nethunter-termux</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后它会询问，我们输入y然后回车.之后会出现这么个界面，输入y之后回车等待下载完成（要有耐心，和一个流畅的网络，中途可能会下载失败，我们只需要重新开始就行了）</p>
+<h3 id="下载镜像" class="heading-element"><span>1.4 下载镜像</span>
+  <a href="#%e4%b8%8b%e8%bd%bd%e9%95%9c%e5%83%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>他会自动执行下载，等待它下载完成，下载期间请勿退出应用，这一步非常重要！！！！
+完成之后你只需要输入其中一个就能启动kali linux</p>
+<h3 id="启动" class="heading-element"><span>1.5 启动</span>
+  <a href="#%e5%90%af%e5%8a%a8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>nethunter （缩写：nh）开启 kali命令行，注意开启的是普通权限的命令行</p>
+<p>nethunte -r （缩写：nh -r）开启的是管理员root的命令行</p>
+<h3 id="使用vnc连接桌面" class="heading-element"><span>1.6 使用VNC连接桌面</span>
+  <a href="#%e4%bd%bf%e7%94%a8vnc%e8%bf%9e%e6%8e%a5%e6%a1%8c%e9%9d%a2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>现在运行图形画界面,首先输入nh -r，因为Nethunter默认安装了图形画界面，所以我们只需要通过kex passwd设置密码，然后输入kex开启VNC服务。
+注意我们要记住这里的  RFB PORT 我这里为5902（先记着，待会有用） 有些人可能不一样，也许是5901
+然后打开VNC Viewer，点击右下角＋号，然后Address输入刚才的RFB PORT，:5902 然后name随便起，点击Create
+<a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhYzLX.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhYzLX.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhYzLX.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhYzLX.jpg" alt="https://i.imgtg.com/2023/07/25/OhYzLX.jpg" srcset="https://i.imgtg.com/2023/07/25/OhYzLX.jpg?size=small, https://i.imgtg.com/2023/07/25/OhYzLX.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhYzLX.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhYzLX.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+然后其他设置就像图上这样就行了，View only一定要关掉！然后输入刚才设置的密码就行了。如何具体设置和使用，网上也有教程的，这里就不详细讲了。到处kali系统就安装好了，如何有需要的朋友，也可以使用apt install kali-linux-everything来安装完整系统，前提是内存充足</p>
+<p>进去kali桌面后，VNC提供了键盘，鼠标等，详细使用请上网查.</p>
+<h2 id="第三方脚本推荐" class="heading-element"><span>2 第三方脚本（推荐）</span>
+  <a href="#%e7%ac%ac%e4%b8%89%e6%96%b9%e8%84%9a%e6%9c%ac%e6%8e%a8%e8%8d%90" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>Tmoe是一个很好的linux安装脚本而且有很多辅助功能，基本都是傻瓜式安装，但是有很多坑
+首先项目地址如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">https://gitee.com/mo2/linux/blob/master/share/doc/zh/lite.md</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这是Moe大佬写的脚本，可以方便地让我们在安卓上部署linux环境的工具。其功能相当丰富，可以一键安装linux发行版及图形环境(包括KDE等重量级环境!!!)，此外包含了很多工具，主要都是一键下载，里面集成了局域网音频传递工具下载(可以让你体验到有声的vnc)，zsh终端下载等等。此外，它是图形化TUI，还是比较方便新人的。
+那么请按以下教程来安装和使用它。
+第一请设置termux，给予访问存储权限。
+然后输入以下命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bash -c <span class="s2">&#34;</span><span class="k">$(</span>curl -Lv gitee.com/mo2/linux/raw/master/debian.sh<span class="k">)</span><span class="s2">&#34;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>他会开始自动下载依赖与工具。下载很快，几秒钟就好了，然后就会进入图形界面了。应该不需要过多介绍了，请记住一个原则，不懂如何操作就直接一路enter下去，部分地方需要你输入y(尤其是换源时)。建议语言选择第三项简体中文(部分内容仍为繁体。。。)此外建议选择切换为北外源。</p>
+<p>Tmoe拥有更高的自由度，你可以随意更换桌面系统，更换VNC方式等等，还集成了很多有用的工具</p>
+]]></description>
+</item>
+</channel>
+</rss>
