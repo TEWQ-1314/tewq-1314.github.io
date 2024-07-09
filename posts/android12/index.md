@@ -101,5 +101,5 @@ set\_sync\_disabled\_for\_tests none
 ---
 
 > 作者: [Haoran Dong](https://github.com/TEWQ1314)  
-> URL: http://localhost:1313/posts/android12/  
+> URL: https://github.com/TEWQ1314/tewq1314.github.io.git/posts/android12/  
 

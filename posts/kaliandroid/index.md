@@ -80,5 +80,5 @@ Tmoe拥有更高的自由度，你可以随意更换桌面系统，更换VNC方�
 ---
 
 > 作者: [Haoran Dong](https://github.com/TEWQ1314)  
-> URL: http://localhost:1313/posts/kaliandroid/  
+> URL: https://github.com/TEWQ1314/tewq1314.github.io.git/posts/kaliandroid/  
 

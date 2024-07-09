@@ -192,5 +192,5 @@ chmod &#43;x hello
 ---
 
 > 作者: [Haoran Dong](https://github.com/TEWQ1314)  
-> URL: http://localhost:1313/posts/vscgo/  
+> URL: https://github.com/TEWQ1314/tewq1314.github.io.git/posts/vscgo/  
 

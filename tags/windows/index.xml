@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>windows - 标签 | TEWQ</title>
-    <link>http://localhost:1313/tags/windows/</link>
+    <link>https://github.com/TEWQ1314/tewq1314.github.io.git/tags/windows/</link>
     <description>windows - 标签 | TEWQ</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>donghaoran@mail.depth.su (Haoran Dong)</managingEditor>
-      <webMaster>donghaoran@mail.depth.su (Haoran Dong)</webMaster><copyright>本站内容采用 CC BY-NC-SA 4.0 国际许可协议。</copyright><lastBuildDate>Mon, 24 Jul 2023 22:10:35 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/windows/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>donghaoran@mail.depth.su (Haoran Dong)</webMaster><copyright>本站内容采用 CC BY-NC-SA 4.0 国际许可协议。</copyright><lastBuildDate>Mon, 24 Jul 2023 22:10:35 &#43;0000</lastBuildDate><atom:link href="https://github.com/TEWQ1314/tewq1314.github.io.git/tags/windows/" rel="self" type="application/rss+xml" /><item>
   <title>如何利用TaskList给电脑杀毒</title>
-  <link>http://localhost:1313/posts/tasklist/</link>
+  <link>https://github.com/TEWQ1314/tewq1314.github.io.git/posts/tasklist/</link>
   <pubDate>Mon, 24 Jul 2023 22:10:35 &#43;0000</pubDate>
   <author>Haoran Dong</author>
-  <guid>http://localhost:1313/posts/tasklist/</guid>
+  <guid>https://github.com/TEWQ1314/tewq1314.github.io.git/posts/tasklist/</guid>
   <description><![CDATA[<h2 id="一普通安全模式杀毒" class="heading-element"><span>1 [一］.普通安全模式杀毒</span>
   <a href="#%e4%b8%80%e6%99%ae%e9%80%9a%e5%ae%89%e5%85%a8%e6%a8%a1%e5%bc%8f%e6%9d%80%e6%af%92" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>

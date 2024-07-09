@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Kali Linux - 标签 | TEWQ</title>
-    <link>http://localhost:1313/tags/kali-linux/</link>
+    <link>https://github.com/TEWQ1314/tewq1314.github.io.git/tags/kali-linux/</link>
     <description>Kali Linux - 标签 | TEWQ</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>donghaoran@mail.depth.su (Haoran Dong)</managingEditor>
-      <webMaster>donghaoran@mail.depth.su (Haoran Dong)</webMaster><copyright>本站内容采用 CC BY-NC-SA 4.0 国际许可协议。</copyright><lastBuildDate>Tue, 25 Jul 2023 10:08:07 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/kali-linux/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>donghaoran@mail.depth.su (Haoran Dong)</webMaster><copyright>本站内容采用 CC BY-NC-SA 4.0 国际许可协议。</copyright><lastBuildDate>Tue, 25 Jul 2023 10:08:07 &#43;0000</lastBuildDate><atom:link href="https://github.com/TEWQ1314/tewq1314.github.io.git/tags/kali-linux/" rel="self" type="application/rss+xml" /><item>
   <title>如何在Android设备上安装Kali Linux系统(不ROOT)</title>
-  <link>http://localhost:1313/posts/kaliandroid/</link>
+  <link>https://github.com/TEWQ1314/tewq1314.github.io.git/posts/kaliandroid/</link>
   <pubDate>Tue, 25 Jul 2023 10:08:07 &#43;0000</pubDate>
   <author>Haoran Dong</author>
-  <guid>http://localhost:1313/posts/kaliandroid/</guid>
+  <guid>https://github.com/TEWQ1314/tewq1314.github.io.git/posts/kaliandroid/</guid>
   <description><![CDATA[<p>本文是通过在Android上构建Linux Arm64系统版本实现，所以仅对Android设备有效，因为Android是基于Linux开源的，所以可以安装Linux发行版。
 准备工作</p>
 <pre><code>  Termux，Play商店或[ZeroTermux](https://od.ixcmstudio.cn/repository/main/ZeroTermux/)代替
@@ -37,7 +37,7 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pkg update
 </span></span><span class="line"><span class="cl">pkg upgrade</span></span></code></pre></td></tr></table>
 </div>
-</div><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhYkOL.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhYkOL.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhYkOL.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhYkOL.jpg" alt="https://i.imgtg.com/2023/07/25/OhYkOL.jpg" srcset="https://i.imgtg.com/2023/07/25/OhYkOL.jpg?size=small, https://i.imgtg.com/2023/07/25/OhYkOL.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhYkOL.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhYkOL.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+</div><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhYkOL.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhYkOL.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhYkOL.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhYkOL.jpg" alt="https://i.imgtg.com/2023/07/25/OhYkOL.jpg" srcset="https://i.imgtg.com/2023/07/25/OhYkOL.jpg?size=small, https://i.imgtg.com/2023/07/25/OhYkOL.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhYkOL.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhYkOL.jpg" style="background: url(/TEWQ1314/tewq1314.github.io.git/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
 更新软件包.</p>
 <h3 id="下载脚本" class="heading-element"><span>1.2 下载脚本</span>
   <a href="#%e4%b8%8b%e8%bd%bd%e8%84%9a%e6%9c%ac" class="heading-mark">
@@ -51,7 +51,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install wget</span></span></code></pre></td></tr></table>
 </div>
-</div><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhYxNi.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhYxNi.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhYxNi.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhYxNi.jpg" alt="https://i.imgtg.com/2023/07/25/OhYxNi.jpg" srcset="https://i.imgtg.com/2023/07/25/OhYxNi.jpg?size=small, https://i.imgtg.com/2023/07/25/OhYxNi.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhYxNi.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhYxNi.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+</div><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhYxNi.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhYxNi.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhYxNi.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhYxNi.jpg" alt="https://i.imgtg.com/2023/07/25/OhYxNi.jpg" srcset="https://i.imgtg.com/2023/07/25/OhYxNi.jpg?size=small, https://i.imgtg.com/2023/07/25/OhYxNi.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhYxNi.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhYxNi.jpg" style="background: url(/TEWQ1314/tewq1314.github.io.git/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
 如果下载过程中有询问就输入y然后回车</p>
 <p>Kali Linux Android官方的下载指令是</p>
 <div class="highlight"><div class="chroma">
@@ -102,7 +102,7 @@
 </h3><p>现在运行图形画界面,首先输入nh -r，因为Nethunter默认安装了图形画界面，所以我们只需要通过kex passwd设置密码，然后输入kex开启VNC服务。
 注意我们要记住这里的  RFB PORT 我这里为5902（先记着，待会有用） 有些人可能不一样，也许是5901
 然后打开VNC Viewer，点击右下角＋号，然后Address输入刚才的RFB PORT，:5902 然后name随便起，点击Create
-<a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhYzLX.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhYzLX.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhYzLX.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhYzLX.jpg" alt="https://i.imgtg.com/2023/07/25/OhYzLX.jpg" srcset="https://i.imgtg.com/2023/07/25/OhYzLX.jpg?size=small, https://i.imgtg.com/2023/07/25/OhYzLX.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhYzLX.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhYzLX.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+<a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhYzLX.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhYzLX.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhYzLX.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhYzLX.jpg" alt="https://i.imgtg.com/2023/07/25/OhYzLX.jpg" srcset="https://i.imgtg.com/2023/07/25/OhYzLX.jpg?size=small, https://i.imgtg.com/2023/07/25/OhYzLX.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhYzLX.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhYzLX.jpg" style="background: url(/TEWQ1314/tewq1314.github.io.git/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
 然后其他设置就像图上这样就行了，View only一定要关掉！然后输入刚才设置的密码就行了。如何具体设置和使用，网上也有教程的，这里就不详细讲了。到处kali系统就安装好了，如何有需要的朋友，也可以使用apt install kali-linux-everything来安装完整系统，前提是内存充足</p>
 <p>进去kali桌面后，VNC提供了键盘，鼠标等，详细使用请上网查.</p>
 <h2 id="第三方脚本推荐" class="heading-element"><span>2 第三方脚本（推荐）</span>

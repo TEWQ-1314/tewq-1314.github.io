@@ -96,5 +96,5 @@ Now we can log in to github and view it.
 ---
 
 > 作者: [Haoran Dong](https://github.com/TEWQ1314)  
-> URL: http://localhost:1313/posts/2/  
+> URL: https://github.com/TEWQ1314/tewq1314.github.io.git/posts/2/  
 
