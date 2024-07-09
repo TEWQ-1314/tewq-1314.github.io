@@ -1,0 +1,118 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Minecraft - 标签 | TEWQ</title>
+    <link>https://www.depth.su/tags/minecraft/</link>
+    <description>Minecraft - 标签 | TEWQ</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>donghaoran@mail.depth.su (Haoran Dong)</managingEditor>
+      <webMaster>donghaoran@mail.depth.su (Haoran Dong)</webMaster><copyright>本站内容采用 CC BY-NC-SA 4.0 国际许可协议。</copyright><lastBuildDate>Tue, 25 Jul 2023 09:41:39 &#43;0000</lastBuildDate><atom:link href="https://www.depth.su/tags/minecraft/" rel="self" type="application/rss+xml" /><item>
+  <title>How to play Minecraft:Java 1.17 on Android/PojavLauncher</title>
+  <link>https://www.depth.su/posts/pojav/</link>
+  <pubDate>Tue, 25 Jul 2023 09:41:39 &#43;0000</pubDate>
+  <author>Haoran Dong</author>
+  <guid>https://www.depth.su/posts/pojav/</guid>
+  <description><![CDATA[<p>// Because my English level is limited, please forgive me for speaking in Chinese.You can use Google to translate this article, there may be some errors.I am deeply sorry for the trouble you have caused!<br>
+前言：对于不少想要在安卓手机上体验MC:JAVA版的MC玩家，这里我将尽力阐述详细的做法，如果有任何的问题，欢迎留言或发邮件，测试时最新版为1.17，如有差别联系询问。
+<a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhYqPK.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhYqPK.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhYqPK.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhYqPK.jpg" alt="https://i.imgtg.com/2023/07/25/OhYqPK.jpg" srcset="https://i.imgtg.com/2023/07/25/OhYqPK.jpg?size=small, https://i.imgtg.com/2023/07/25/OhYqPK.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhYqPK.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhYqPK.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h2 id="示例1165" class="heading-element"><span>1 示例1.16.5</span>
+  <a href="#%e7%a4%ba%e4%be%8b1165" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>一，MC:Java 1.17及以后（由于1.17及以后的MC版本使用的Java版本与之前不同，所以我将分开叙述）
+准备：PojavLauncher app，Jre17/aarch64</p>
+<h3 id="下载pojavlauncher" class="heading-element"><span>1.1 下载PojavLauncher</span>
+  <a href="#%e4%b8%8b%e8%bd%bdpojavlauncher" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>注意！！：这里请不要使用Google play下载，请访问开发者的<a href="https://github.com/PojavLauncherTeam/PojavLauncher/actions?query=branch%253Av3_openjdk"target="_blank" rel="external nofollow noopener noreferrer">github网站<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>以下载最新版的app，而且此版本会导致手机非常卡顿，甚至无法进入游戏！！目前不建议使用</p>
+<p>如果你不是很擅长github可以在这里下载稳定版的
+app-debug-norruntime.apk，注意是app-debug-norruntime.apk而不是app-debug.apk。
+首先点击链接，然后滑倒最底端，如图点击最新版，然后再滑倒最底部，下载app-debug-norruntime.apk
+<a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhYMLg.png?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhYMLg.png?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhYMLg.png</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhYMLg.png" alt="https://i.imgtg.com/2023/07/25/OhYMLg.png" srcset="https://i.imgtg.com/2023/07/25/OhYMLg.png?size=small, https://i.imgtg.com/2023/07/25/OhYMLg.png?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhYMLg.png?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhYMLg.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h3 id="下载java" class="heading-element"><span>1.2 下载Java</span>
+  <a href="#%e4%b8%8b%e8%bd%bdjava" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>下载临时<a href="https://github.com/PojavLauncherTeam/android-openjdk-build-multiarch/actions?query=branch%253Abuildjre16"target="_blank" rel="external nofollow noopener noreferrer">Jre17版本<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>因为目前1.17是测试项目，不是很稳定
+详细过程可以参考<a href="https://pojavlauncherteam.github.io/updates/117.html"target="_blank" rel="external nofollow noopener noreferrer">Pojav官方文档<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>
+注意绿色打勾的文件才能使用，此时下载文件需要登录github,账号自己注册
+<a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhYOuB.png?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhYOuB.png?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhYOuB.png</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhYOuB.png" alt="https://i.imgtg.com/2023/07/25/OhYOuB.png" srcset="https://i.imgtg.com/2023/07/25/OhYOuB.png?size=small, https://i.imgtg.com/2023/07/25/OhYOuB.png?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhYOuB.png?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhYOuB.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+<a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhYozs.png?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhYozs.png?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhYozs.png</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhYozs.png" alt="https://i.imgtg.com/2023/07/25/OhYozs.png" srcset="https://i.imgtg.com/2023/07/25/OhYozs.png?size=small, https://i.imgtg.com/2023/07/25/OhYozs.png?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhYozs.png?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhYozs.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+注意，要下载对应的版本</p>
+<p>基本上所有人都应该选择下载jre17-aarch64,极少数人要根据自己手里架构下载对应版本。
+<a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhVw7l.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhVw7l.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhVw7l.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhVw7l.jpg" alt="https://i.imgtg.com/2023/07/25/OhVw7l.jpg" srcset="https://i.imgtg.com/2023/07/25/OhVw7l.jpg?size=small, https://i.imgtg.com/2023/07/25/OhVw7l.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhVw7l.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhVw7l.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+下载好软件和jre后，首先打开PojavLauncher软件，它会让你导入运行库，你就选择你下载的文件，因为下载的是zip文件，识别的是tar.gz文件，所以可能要点两次才能成功。</p>
+<p>然后将渲染器切换到 gl4es 1.1.5 - OpenGL ES 3。
+你就可以享受MC:Java 1.17了！！</p>
+<p>以上是比较正规的做法，其实在官方github上的Action上有许多开发者上传的安装包中兼容了Jre17,直接下载这种未发布版本也是一种尝鲜的好办法，但我相信不久之后官方会推出稳定的1.17版本，现在还是1.16.5之类的玩玩就行了。</p>
+<h2 id="mcjava-117以前的版本" class="heading-element"><span>2 MC:Java 1.17以前的版本</span>
+  <a href="#mcjava-117%e4%bb%a5%e5%89%8d%e7%9a%84%e7%89%88%e6%9c%ac" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>此时我们建议使用Google play下载PojavLauncher，不用下载其他文件，打开软件可直接下载对应的jar进行游戏。</p>
+<p>###注释:<br>
+1,经本人验证，PojavLauncher界面和其他方面比Mcinabox好。</p>
+<p>2, Google play下载的PojavLauncher对于1.16.5等版本的支持较好，可以流畅游玩。而配置过的1.17版本的软件几乎所有版本的优化都不是很好，不建议玩家尝试.</p>
+<p>3,对于无法使用微软登录PojavLauncher的用户，可能是因为你你的账号没有购买正版MC:Java.
+报错提示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">(</span>java.lang.RuntimeException: Can<span class="err">&#39;</span>t login a demo account!  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">MSA Error: 404: Not Found, error stream:
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;path&#34;</span> : <span class="s2">&#34;/minecraft/profile&#34;</span>,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;errorType&#34;</span> : <span class="s2">&#34;NOT_FOUND&#34;</span>,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;error&#34;</span> : <span class="s2">&#34;NOT_FOUND&#34;</span>,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;errorMessage&#34;</span> : <span class="s2">&#34;The server has not found anything matching the request URI&#34;</span>,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;developerMessage&#34;</span> : <span class="s2">&#34;The server has not found anything matching the request URI&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"> at net.kdt.pojavlaunch.authenticator.microsoft.Msa.throwResponseError<span class="o">(</span>Msa.java:292<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> at net.kdt.pojavlaunch.authenticator.microsoft.Msa.checkMcProfile<span class="o">(</span>Msa.java:256<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> at net.kdt.pojavlaunch.authenticator.microsoft.Msa.acquireMinecraftToken<span class="o">(</span>Msa.java:200<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> at net.kdt.pojavlaunch.authenticator.microsoft.Msa.acquireXsts<span class="o">(</span>Msa.java:167<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> at net.kdt.pojavlaunch.authenticator.microsoft.Msa.acquireXBLToken<span class="o">(</span>Msa.java:122<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> at net.kdt.pojavlaunch.authenticator.microsoft.Msa.acquireAccessToken<span class="o">(</span>Msa.java:75<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> at net.kdt.pojavlaunch.authenticator.microsoft.Msa.&lt;init&gt;<span class="o">(</span>Msa.java:35<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> at net.kdt.pojavlaunch.authenticator.microsoft.MicrosoftAuthTask.doInBackground<span class="o">(</span>MicrosoftAuthTask.java:72<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> at net.kdt.pojavlaunch.authenticator.microsoft.MicrosoftAuthTask.doInBackground<span class="o">(</span>MicrosoftAuthTask.java:22<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> at android.os.AsyncTask<span class="nv">$3</span>.call<span class="o">(</span>AsyncTask.java:394<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> at java.util.concurrent.FutureTask.run<span class="o">(</span>FutureTask.java:266<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> at android.os.AsyncTask<span class="nv">$SerialExecutor$1</span>.run<span class="o">(</span>AsyncTask.java:305<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> at java.util.concurrent.ThreadPoolExecutor.runWorker<span class="o">(</span>ThreadPoolExecutor.java:1167<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> at java.util.concurrent.ThreadPoolExecutor<span class="nv">$Worker</span>.run<span class="o">(</span>ThreadPoolExecutor.java:641<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> at java.lang.Thread.run<span class="o">(</span>Thread.java:923<span class="o">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhVCOb.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhVCOb.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhVCOb.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhVCOb.jpg" alt="https://i.imgtg.com/2023/07/25/OhVCOb.jpg" srcset="https://i.imgtg.com/2023/07/25/OhVCOb.jpg?size=small, https://i.imgtg.com/2023/07/25/OhVCOb.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhVCOb.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhVCOb.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<p>4,所有的教程都是针对目前而言(2021.8.8),对于之前或之后的适用性无法保证
+5,有些细节被省略，不懂得玩家可以发邮件或留言，一定尽力解决问题</p>
+]]></description>
+</item>
+</channel>
+</rss>
