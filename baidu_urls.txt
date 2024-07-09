@@ -1,0 +1,12 @@
+http://localhost:1313/posts/git-blog/
+http://localhost:1313/posts/vscgo/
+http://localhost:1313/posts/pixelbugs/
+http://localhost:1313/posts/android12/
+http://localhost:1313/posts/kaliandroid/
+http://localhost:1313/posts/pojav/
+http://localhost:1313/posts/2/
+http://localhost:1313/posts/tasklist/
+http://localhost:1313/links/
+http://localhost:1313/guestbook/
+http://localhost:1313/about/
+http://localhost:1313/posts/hello-world/
