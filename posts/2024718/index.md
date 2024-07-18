@@ -6,7 +6,7 @@
 动量守恒&#43;动能守恒&lt;br /&gt;
 
 #### 动碰静
-![1](res/1.png)
+![1](_res/1.png)
 #### 动碰动
 ![2](_res/2.png)
 
@@ -20,5 +20,5 @@
 ---
 
 > 作者: [Haoran Dong](https://github.com/TEWQ1314)  
-> URL: https://www.depth.su/posts/si/  
+> URL: https://www.depth.su/posts/2024718/  
 
