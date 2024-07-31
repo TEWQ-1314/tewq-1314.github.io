@@ -82,6 +82,6 @@ MSA Error: 404: Not Found, error stream:
 
 ---
 
-> 作者: [Haoran Dong](https://github.com/TEWQ1314)  
+> 作者: [Haoran Dong](https://github.com/TEWQ-1314)  
 > URL: https://www.depth.su/posts/pojav/  
 

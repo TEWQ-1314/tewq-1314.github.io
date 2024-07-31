@@ -100,6 +100,6 @@ set\_sync\_disabled\_for\_tests none
 
 ---
 
-> 作者: [Haoran Dong](https://github.com/TEWQ1314)  
+> 作者: [Haoran Dong](https://github.com/TEWQ-1314)  
 > URL: https://www.depth.su/posts/android12/  
 

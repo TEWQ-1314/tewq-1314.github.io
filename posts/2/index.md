@@ -95,6 +95,6 @@ Now we can log in to github and view it.
 
 ---
 
-> 作者: [Haoran Dong](https://github.com/TEWQ1314)  
+> 作者: [Haoran Dong](https://github.com/TEWQ-1314)  
 > URL: https://www.depth.su/posts/2/  
 
