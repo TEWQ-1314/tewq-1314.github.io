@@ -1,0 +1,10 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>O meu blog</title>
+    <link>https://www.depth.su/pt-pt/</link>
+    <description>Haoran Dong&#39;s BLOG</description>
+    <generator>Hugo -- gohugo.io</generator><language>pt-pt</language><managingEditor>donghaoran@mail.depth.su (Haoran Dong)</managingEditor>
+      <webMaster>donghaoran@mail.depth.su (Haoran Dong)</webMaster>
+      <atom:link href="https://www.depth.su/pt-pt/index.xml" rel="self" type="application/rss+xml" />
+    </channel>
+</rss>
