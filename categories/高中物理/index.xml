@@ -1,0 +1,38 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>高中物理 - 分类 | TEWQ</title>
+    <link>https://www.depth.su/categories/%E9%AB%98%E4%B8%AD%E7%89%A9%E7%90%86/</link>
+    <description>高中物理 - 分类 | TEWQ</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>donghaoran@mail.depth.su (Haoran Dong)</managingEditor>
+      <webMaster>donghaoran@mail.depth.su (Haoran Dong)</webMaster><copyright>本站内容采用 CC BY-NC-SA 4.0 国际许可协议。</copyright><lastBuildDate>Mon, 15 Jul 2024 10:29:00 &#43;0000</lastBuildDate><atom:link href="https://www.depth.su/categories/%E9%AB%98%E4%B8%AD%E7%89%A9%E7%90%86/" rel="self" type="application/rss+xml" /><item>
+  <title>速度增量法解决弹性碰撞问题</title>
+  <link>https://www.depth.su/posts/2024718/</link>
+  <pubDate>Mon, 15 Jul 2024 10:29:00 &#43;0000</pubDate>
+  <author>Haoran Dong</author>
+  <guid>https://www.depth.su/posts/2024718/</guid>
+  <description><![CDATA[<p>弹性碰撞（elastic collision），又称完全弹性碰撞，指在理想情况下，物体碰撞后，形变能够恢复，不发热、发声，没有动能损失；完全弹性碰撞是恢复系数为1的碰撞。请注意后一种表述与前一种完全等价，但采用后一种更容易对问题做定量分析。 [1]真正的弹性碰撞只在分子、原子以及更小的微粒之间才会出现。生活中，硬质木球或钢球发生碰撞时，动能的损失很小，可以忽略不计，通常也可以将它们的碰撞看成弹性碰撞。</p>
+<h2 id="定义法" class="heading-element"><span>1 定义法</span>
+  <a href="#%e5%ae%9a%e4%b9%89%e6%b3%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>动量守恒+动能守恒<br /></p>
+<h4 id="动碰静" class="heading-element"><span>1.0.1 动碰静</span>
+  <a href="#%e5%8a%a8%e7%a2%b0%e9%9d%99" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p><a class="lightgallery" href="_res/1.png?size=large" data-thumbnail="_res/1.png?size=small" data-sub-html="<h2>1</h2>"><img loading="lazy" src="_res/1.png" alt="1" srcset="_res/1.png?size=small, _res/1.png?size=medium 1.5x, _res/1.png?size=large 2x" data-title="1" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h4 id="动碰动" class="heading-element"><span>1.0.2 动碰动</span>
+  <a href="#%e5%8a%a8%e7%a2%b0%e5%8a%a8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p><a class="lightgallery" href="_res/2.png?size=large" data-thumbnail="_res/2.png?size=small" data-sub-html="<h2>2</h2>"><img loading="lazy" src="_res/2.png" alt="2" srcset="_res/2.png?size=small, _res/2.png?size=medium 1.5x, _res/2.png?size=large 2x" data-title="2" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h2 id="速度增量法" class="heading-element"><span>2 速度增量法</span>
+  <a href="#%e9%80%9f%e5%ba%a6%e5%a2%9e%e9%87%8f%e6%b3%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>设碰前m1，m2的速度为v1,v2。碰后m1,m2的速度为v1&rsquo;,v2&rsquo; <br />
+<a class="lightgallery" href="_res/3.png?size=large" data-thumbnail="_res/3.png?size=small" data-sub-html="<h2>3</h2>"><img loading="lazy" src="_res/3.png" alt="3" srcset="_res/3.png?size=small, _res/3.png?size=medium 1.5x, _res/3.png?size=large 2x" data-title="3" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+]]></description>
+</item>
+</channel>
+</rss>

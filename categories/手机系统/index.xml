@@ -1,0 +1,337 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>手机系统 - 分类 | TEWQ</title>
+    <link>https://www.depth.su/categories/%E6%89%8B%E6%9C%BA%E7%B3%BB%E7%BB%9F/</link>
+    <description>手机系统 - 分类 | TEWQ</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>donghaoran@mail.depth.su (Haoran Dong)</managingEditor>
+      <webMaster>donghaoran@mail.depth.su (Haoran Dong)</webMaster><copyright>本站内容采用 CC BY-NC-SA 4.0 国际许可协议。</copyright><lastBuildDate>Tue, 25 Jul 2023 10:30:28 &#43;0000</lastBuildDate><atom:link href="https://www.depth.su/categories/%E6%89%8B%E6%9C%BA%E7%B3%BB%E7%BB%9F/" rel="self" type="application/rss+xml" /><item>
+  <title>How to fixs Pixel:&#34;Your device is corrupt....&#34;</title>
+  <link>https://www.depth.su/posts/pixelbugs/</link>
+  <pubDate>Tue, 25 Jul 2023 10:30:28 &#43;0000</pubDate>
+  <author>Haoran Dong</author>
+  <guid>https://www.depth.su/posts/pixelbugs/</guid>
+  <description><![CDATA[<h3 id="情况描述" class="heading-element"><span>0.1 情况描述</span>
+  <a href="#%e6%83%85%e5%86%b5%e6%8f%8f%e8%bf%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>情况描述从安卓 13 回退到安卓 12 时，手机手机后出现这个界面，按下电源键后立刻重启，又回到这一界面，无法进入系统</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">＜ ! ＞Your device is corrupt。It cant be trusted and may work properly
+</span></span><span class="line"><span class="cl">Visit this link on another device:
+</span></span><span class="line"><span class="cl">g.co<span class="se">\A</span>BH</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a class="lightgallery" href="https://s2.loli.net/2022/07/13/1Q9yPH47pzNcLVU.jpg?size=large" data-thumbnail="https://s2.loli.net/2022/07/13/1Q9yPH47pzNcLVU.jpg?size=small" data-sub-html="<h2>https://s2.loli.net/2022/07/13/1Q9yPH47pzNcLVU.jpg</h2>"><img loading="lazy" src="https://s2.loli.net/2022/07/13/1Q9yPH47pzNcLVU.jpg" alt="https://s2.loli.net/2022/07/13/1Q9yPH47pzNcLVU.jpg" srcset="https://s2.loli.net/2022/07/13/1Q9yPH47pzNcLVU.jpg?size=small, https://s2.loli.net/2022/07/13/1Q9yPH47pzNcLVU.jpg?size=medium 1.5x, https://s2.loli.net/2022/07/13/1Q9yPH47pzNcLVU.jpg?size=large 2x" data-title="https://s2.loli.net/2022/07/13/1Q9yPH47pzNcLVU.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+据说是因为更新时候损坏了系统校验，所以无法进入</p>
+<h2 id="其他网友做法先来看看其他网友的做法" class="heading-element"><span>1 其他网友做法先来看看其他网友的做法</span>
+  <a href="#%e5%85%b6%e4%bb%96%e7%bd%91%e5%8f%8b%e5%81%9a%e6%b3%95%e5%85%88%e6%9d%a5%e7%9c%8b%e7%9c%8b%e5%85%b6%e4%bb%96%e7%bd%91%e5%8f%8b%e7%9a%84%e5%81%9a%e6%b3%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>方法 1：手机进入 REC，点击【高级】，点击【终端命令】输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> reboot <span class="s2">&#34;dm-verity enforcing&#34;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>方法 2：连接电脑后，在电脑打开【ADB 命令行】输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> adb reboot <span class="s2">&#34;dm-verity enforcing&#34;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>方法 3：<a href="http://t.csdn.cn/ZtuM7"target="_blank" rel="external nofollow noopener noreferrer">Your device is corrupt. It cant‘t be trusted and may not work propely.<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<h2 id="博主的做法重装系统" class="heading-element"><span>2 博主的做法：重装系统</span>
+  <a href="#%e5%8d%9a%e4%b8%bb%e7%9a%84%e5%81%9a%e6%b3%95%e9%87%8d%e8%a3%85%e7%b3%bb%e7%bb%9f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="准备工具" class="heading-element"><span>2.1 准备工具</span>
+  <a href="#%e5%87%86%e5%a4%87%e5%b7%a5%e5%85%b7" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>问题的Google Pixel 4A (5G)（其他机型类比）, 一台笔记本电脑，一根可以传输数据的 USB 数据线</p>
+<h3 id="下载工具包" class="heading-element"><span>2.2 下载工具包</span>
+  <a href="#%e4%b8%8b%e8%bd%bd%e5%b7%a5%e5%85%b7%e5%8c%85" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>打开电脑，从 Google 官方下载 <a href="https://developer.android.google.cn/studio/releases/platform-tools?hl=zh-cn#downloads"target="_blank" rel="external nofollow noopener noreferrer">ADB 命令行<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>工具包，下载完成之后解压缩，记录下解压后的文件夹目录，例如我这里是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">E:<span class="se">\T</span>EMP<span class="se">\p</span>latform-tools_r33.0.2-windows<span class="se">\p</span>latform-tools</span></span></code></pre></td></tr></table>
+</div>
+</div><p>每个人的电脑不一样，自己随机应变</p>
+<h3 id="配置环境变量" class="heading-element"><span>2.3 配置环境变量</span>
+  <a href="#%e9%85%8d%e7%bd%ae%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>桌面上找到 “此电脑”, 鼠标右单击，左单击 “属性” 进入控制面板，点击 “系统高级设置”，设置环境变量。在 “系统变量” 一栏点击 “path” 变量，新建，把刚才复制的路径粘贴。E:\TEMP\platform-tools_r33.0.2-windows\platform-tools 然后保存。不会的朋友可以参考 Google.
+<a class="lightgallery" href="https://s2.loli.net/2022/07/13/BKimrp47wZSs6fk.jpg?size=large" data-thumbnail="https://s2.loli.net/2022/07/13/BKimrp47wZSs6fk.jpg?size=small" data-sub-html="<h2>https://s2.loli.net/2022/07/13/BKimrp47wZSs6fk.jpg</h2>"><img loading="lazy" src="https://s2.loli.net/2022/07/13/BKimrp47wZSs6fk.jpg" alt="https://s2.loli.net/2022/07/13/BKimrp47wZSs6fk.jpg" srcset="https://s2.loli.net/2022/07/13/BKimrp47wZSs6fk.jpg?size=small, https://s2.loli.net/2022/07/13/BKimrp47wZSs6fk.jpg?size=medium 1.5x, https://s2.loli.net/2022/07/13/BKimrp47wZSs6fk.jpg?size=large 2x" data-title="https://s2.loli.net/2022/07/13/BKimrp47wZSs6fk.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+使用 win+R 调出窗口，输入 cmd 后回车进入命令行，将手机的用数据线与电脑相连</p>
+<h3 id="进入fastboot" class="heading-element"><span>2.4 进入Fastboot</span>
+  <a href="#%e8%bf%9b%e5%85%a5fastboot" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>将手机关机重启，重启时长按电源键和音量加键直到进入 Fastboot model
+<a class="lightgallery" href="https://s2.loli.net/2022/07/13/if9eRjyrBVCbdX1.jpg?size=large" data-thumbnail="https://s2.loli.net/2022/07/13/if9eRjyrBVCbdX1.jpg?size=small" data-sub-html="<h2>https://s2.loli.net/2022/07/13/if9eRjyrBVCbdX1.jpg</h2>"><img loading="lazy" src="https://s2.loli.net/2022/07/13/if9eRjyrBVCbdX1.jpg" alt="https://s2.loli.net/2022/07/13/if9eRjyrBVCbdX1.jpg" srcset="https://s2.loli.net/2022/07/13/if9eRjyrBVCbdX1.jpg?size=small, https://s2.loli.net/2022/07/13/if9eRjyrBVCbdX1.jpg?size=medium 1.5x, https://s2.loli.net/2022/07/13/if9eRjyrBVCbdX1.jpg?size=large 2x" data-title="https://s2.loli.net/2022/07/13/if9eRjyrBVCbdX1.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h3 id="进入工程模式" class="heading-element"><span>2.5 进入工程模式</span>
+  <a href="#%e8%bf%9b%e5%85%a5%e5%b7%a5%e7%a8%8b%e6%a8%a1%e5%bc%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>长按音量加键直到进入工程模式（不同机型可以上网查询如何进入）
+<a class="lightgallery" href="https://s2.loli.net/2022/07/13/HholnZBXrkm5f6E.jpg?size=large" data-thumbnail="https://s2.loli.net/2022/07/13/HholnZBXrkm5f6E.jpg?size=small" data-sub-html="<h2>https://s2.loli.net/2022/07/13/HholnZBXrkm5f6E.jpg</h2>"><img loading="lazy" src="https://s2.loli.net/2022/07/13/HholnZBXrkm5f6E.jpg" alt="https://s2.loli.net/2022/07/13/HholnZBXrkm5f6E.jpg" srcset="https://s2.loli.net/2022/07/13/HholnZBXrkm5f6E.jpg?size=small, https://s2.loli.net/2022/07/13/HholnZBXrkm5f6E.jpg?size=medium 1.5x, https://s2.loli.net/2022/07/13/HholnZBXrkm5f6E.jpg?size=large 2x" data-title="https://s2.loli.net/2022/07/13/HholnZBXrkm5f6E.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h3 id="进入recovery" class="heading-element"><span>2.6 进入Recovery</span>
+  <a href="#%e8%bf%9b%e5%85%a5recovery" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>按住电源键，同时按一下音量加键，进入Android Recovery</p>
+<h3 id="选择adb更新" class="heading-element"><span>2.7 选择ADB更新</span>
+  <a href="#%e9%80%89%e6%8b%a9adb%e6%9b%b4%e6%96%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>用音量键进行选择，我们这里选择Apply update from ADB. 按电源键确认
+<a class="lightgallery" href="https://s2.loli.net/2022/07/13/JREKaWeTwmZp1dz.jpg?size=large" data-thumbnail="https://s2.loli.net/2022/07/13/JREKaWeTwmZp1dz.jpg?size=small" data-sub-html="<h2>https://s2.loli.net/2022/07/13/JREKaWeTwmZp1dz.jpg</h2>"><img loading="lazy" src="https://s2.loli.net/2022/07/13/JREKaWeTwmZp1dz.jpg" alt="https://s2.loli.net/2022/07/13/JREKaWeTwmZp1dz.jpg" srcset="https://s2.loli.net/2022/07/13/JREKaWeTwmZp1dz.jpg?size=small, https://s2.loli.net/2022/07/13/JREKaWeTwmZp1dz.jpg?size=medium 1.5x, https://s2.loli.net/2022/07/13/JREKaWeTwmZp1dz.jpg?size=large 2x" data-title="https://s2.loli.net/2022/07/13/JREKaWeTwmZp1dz.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h3 id="连接" class="heading-element"><span>2.8 连接</span>
+  <a href="#%e8%bf%9e%e6%8e%a5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>在电脑命令行输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">adb devices</span></span></code></pre></td></tr></table>
+</div>
+</div><p>回车，这是电脑上会返回你的手机编号，说明成功连接
+<a class="lightgallery" href="https://s2.loli.net/2022/07/13/JlIXGO2zhuEcAdn.jpg?size=large" data-thumbnail="https://s2.loli.net/2022/07/13/JlIXGO2zhuEcAdn.jpg?size=small" data-sub-html="<h2>https://s2.loli.net/2022/07/13/JlIXGO2zhuEcAdn.jpg</h2>"><img loading="lazy" src="https://s2.loli.net/2022/07/13/JlIXGO2zhuEcAdn.jpg" alt="https://s2.loli.net/2022/07/13/JlIXGO2zhuEcAdn.jpg" srcset="https://s2.loli.net/2022/07/13/JlIXGO2zhuEcAdn.jpg?size=small, https://s2.loli.net/2022/07/13/JlIXGO2zhuEcAdn.jpg?size=medium 1.5x, https://s2.loli.net/2022/07/13/JlIXGO2zhuEcAdn.jpg?size=large 2x" data-title="https://s2.loli.net/2022/07/13/JlIXGO2zhuEcAdn.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h3 id="下载系统镜像" class="heading-element"><span>2.9 下载系统镜像</span>
+  <a href="#%e4%b8%8b%e8%bd%bd%e7%b3%bb%e7%bb%9f%e9%95%9c%e5%83%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>访问你的手机官方镜像站，下载对应的 OTA 包，例如我的手机是 Pixel 4a5g, 访问<a href="https://developer.android.google.cn/about/versions/13/download-ota?hl=zh-cn"target="_blank" rel="external nofollow noopener noreferrer">谷歌官方网站<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>下载，注意一定要下载本机型的 OTA 包，且下载包的版本不能低于当前手机系统的版本
+<a class="lightgallery" href="https://s2.loli.net/2022/07/13/9hnN2pQxmo45S1Y.png?size=large" data-thumbnail="https://s2.loli.net/2022/07/13/9hnN2pQxmo45S1Y.png?size=small" data-sub-html="<h2>https://s2.loli.net/2022/07/13/9hnN2pQxmo45S1Y.png</h2>"><img loading="lazy" src="https://s2.loli.net/2022/07/13/9hnN2pQxmo45S1Y.png" alt="https://s2.loli.net/2022/07/13/9hnN2pQxmo45S1Y.png" srcset="https://s2.loli.net/2022/07/13/9hnN2pQxmo45S1Y.png?size=small, https://s2.loli.net/2022/07/13/9hnN2pQxmo45S1Y.png?size=medium 1.5x, https://s2.loli.net/2022/07/13/9hnN2pQxmo45S1Y.png?size=large 2x" data-title="https://s2.loli.net/2022/07/13/9hnN2pQxmo45S1Y.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h3 id="刷入镜像" class="heading-element"><span>2.10 刷入镜像</span>
+  <a href="#%e5%88%b7%e5%85%a5%e9%95%9c%e5%83%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>下载完成后，命令行输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">adb sideload</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后把下载文件拖入命令行窗口，这是它会自动补全 sideload 后面的路径，然后回车，开始写入数据，等待进度到达 100% 后，就可以开机进入系统了
+<a class="lightgallery" href="https://s2.loli.net/2022/07/13/HVmGMv47I58LYQb.jpg?size=large" data-thumbnail="https://s2.loli.net/2022/07/13/HVmGMv47I58LYQb.jpg?size=small" data-sub-html="<h2>https://s2.loli.net/2022/07/13/HVmGMv47I58LYQb.jpg</h2>"><img loading="lazy" src="https://s2.loli.net/2022/07/13/HVmGMv47I58LYQb.jpg" alt="https://s2.loli.net/2022/07/13/HVmGMv47I58LYQb.jpg" srcset="https://s2.loli.net/2022/07/13/HVmGMv47I58LYQb.jpg?size=small, https://s2.loli.net/2022/07/13/HVmGMv47I58LYQb.jpg?size=medium 1.5x, https://s2.loli.net/2022/07/13/HVmGMv47I58LYQb.jpg?size=large 2x" data-title="https://s2.loli.net/2022/07/13/HVmGMv47I58LYQb.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+]]></description>
+</item>
+<item>
+  <title>How To Solve The Problem That Android12&#43; Automatically Ends The Process -PhantomProcessKiller</title>
+  <link>https://www.depth.su/posts/android12/</link>
+  <pubDate>Tue, 25 Jul 2023 10:29:00 &#43;0000</pubDate>
+  <author>Haoran Dong</author>
+  <guid>https://www.depth.su/posts/android12/</guid>
+  <description><![CDATA[<p>Scene:  Termux: [Process completed (signal 9) - press Enter] and Game Exit etc.<br>
+<a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhfN4B.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhfN4B.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhfN4B.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhfN4B.jpg" alt="https://i.imgtg.com/2023/07/25/OhfN4B.jpg" srcset="https://i.imgtg.com/2023/07/25/OhfN4B.jpg?size=small, https://i.imgtg.com/2023/07/25/OhfN4B.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhfN4B.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhfN4B.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h3 id="description" class="heading-element"><span>0.1 Description</span>
+  <a href="#description" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>The latest Android 12 system has been upgraded recently, but there is a problem at present. It may be that the power saving strategy is too radical. Android 12 introduces a program called PhantomProcessKiller, which will detect programs that use too many CPUs. If the parent process is in the background, it will kill all child processes triggered by it.This makes some software such as Termux almost unusable or leads to a poor gaming experience.</p>
+<h3 id="demo-tools" class="heading-element"><span>0.2 Demo Tools</span>
+  <a href="#demo-tools" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>An Android Tablet PC(android 12)-Equipment to be repaired , A Smart Phone(android 13)<br>
+<a href="https://f-droid.org/en/packages/com.termu"target="_blank" rel="external nofollow noopener noreferrer">Termux<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a> (Both devices are in the same LAN).</p>
+<h2 id="开始" class="heading-element"><span>1 开始</span>
+  <a href="#%e5%bc%80%e5%a7%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="进入工程模式" class="heading-element"><span>1.1 进入工程模式</span>
+  <a href="#%e8%bf%9b%e5%85%a5%e5%b7%a5%e7%a8%8b%e6%a8%a1%e5%bc%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Open APaid →Settings  →About APaid →Quickly and continuously click Build Number(You will see a sentence )
+<a class="lightgallery" href="https://i.imgtg.com/2023/07/25/Ohf7ig.png?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/Ohf7ig.png?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/Ohf7ig.png</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/Ohf7ig.png" alt="https://i.imgtg.com/2023/07/25/Ohf7ig.png" srcset="https://i.imgtg.com/2023/07/25/Ohf7ig.png?size=small, https://i.imgtg.com/2023/07/25/Ohf7ig.png?size=medium 1.5x, https://i.imgtg.com/2023/07/25/Ohf7ig.png?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/Ohf7ig.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h3 id="find-the-developer-options" class="heading-element"><span>1.2 Find the Developer Options</span>
+  <a href="#find-the-developer-options" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/Ohfn3l.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/Ohfn3l.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/Ohfn3l.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/Ohfn3l.jpg" alt="https://i.imgtg.com/2023/07/25/Ohfn3l.jpg" srcset="https://i.imgtg.com/2023/07/25/Ohfn3l.jpg?size=small, https://i.imgtg.com/2023/07/25/Ohfn3l.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/Ohfn3l.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/Ohfn3l.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h3 id="find-the-wireless-debugging-and-switch-on" class="heading-element"><span>1.3 Find the Wireless debugging and switch on</span>
+  <a href="#find-the-wireless-debugging-and-switch-on" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhfKma.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhfKma.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhfKma.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhfKma.jpg" alt="https://i.imgtg.com/2023/07/25/OhfKma.jpg" srcset="https://i.imgtg.com/2023/07/25/OhfKma.jpg?size=small, https://i.imgtg.com/2023/07/25/OhfKma.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhfKma.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhfKma.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h3 id="gain-the-code" class="heading-element"><span>1.4 Gain the Code</span>
+  <a href="#gain-the-code" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Then click Pair device with pairing code,you will see these information.<br>
+<a class="lightgallery" href="https://i.imgtg.com/2023/07/25/Ohfe2s.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/Ohfe2s.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/Ohfe2s.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/Ohfe2s.jpg" alt="https://i.imgtg.com/2023/07/25/Ohfe2s.jpg" srcset="https://i.imgtg.com/2023/07/25/Ohfe2s.jpg?size=small, https://i.imgtg.com/2023/07/25/Ohfe2s.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/Ohfe2s.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/Ohfe2s.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+For example:
+IP address and connection port(192.168.1.6:33275)<br>
+IP address and debug port(192.168.1.6:46085)  
+Wi-Fi pairing code(813297).<br>
+ ———Then Don&rsquo;t Close This Page.</p>
+<h3 id="更新termux" class="heading-element"><span>1.5 更新Termux</span>
+  <a href="#%e6%9b%b4%e6%96%b0termux" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pkg update
+</span></span><span class="line"><span class="cl">pkg upgrade</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="install-git-and-tools" class="heading-element"><span>1.6 Install Git and Tools</span>
+  <a href="#install-git-and-tools" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pkg install  git  </span></span></code></pre></td></tr></table>
+</div>
+</div><p>we need to install adb in termux that supports pair feature. for some reason latest version of adb is not available in both termux and debian apt mirrors. luckly a guy on github called reddix did the hard work of compiling adb with gigs of android source code. to install them use.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/rendiix/termux-adb-fastboot</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhfyqN.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhfyqN.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhfyqN.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhfyqN.jpg" alt="https://i.imgtg.com/2023/07/25/OhfyqN.jpg" srcset="https://i.imgtg.com/2023/07/25/OhfyqN.jpg?size=small, https://i.imgtg.com/2023/07/25/OhfyqN.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhfyqN.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhfyqN.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> termux-adb-fastboot</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp -v binary/<span class="k">$(</span>getprop ro.product.cpu.abi<span class="k">)</span>/bin/<span class="se">\*</span> ~/../usr/bin/</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhfAbK.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhfAbK.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhfAbK.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhfAbK.jpg" alt="https://i.imgtg.com/2023/07/25/OhfAbK.jpg" srcset="https://i.imgtg.com/2023/07/25/OhfAbK.jpg?size=small, https://i.imgtg.com/2023/07/25/OhfAbK.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhfAbK.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhfAbK.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h3 id="pair-with-the-debugging-service" class="heading-element"><span>1.7 Pair with the Debugging Service</span>
+  <a href="#pair-with-the-debugging-service" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">adb pair IP:&lt;connection port&gt; &lt;Wi-Fi pairing code&gt;*</span></span></code></pre></td></tr></table>
+</div>
+</div><p>For example</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">adb pair 192.168.1.6:33275 <span class="m">813297</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="now-connect-to-the-device" class="heading-element"><span>1.8 Now connect to the device</span>
+  <a href="#now-connect-to-the-device" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">adb connect &lt;IP address and debug port&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">adb connect 192.168.1.6:46085</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhfiQb.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhfiQb.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhfiQb.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhfiQb.jpg" alt="https://i.imgtg.com/2023/07/25/OhfiQb.jpg" srcset="https://i.imgtg.com/2023/07/25/OhfiQb.jpg?size=small, https://i.imgtg.com/2023/07/25/OhfiQb.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhfiQb.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhfiQb.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h3 id="check" class="heading-element"><span>1.9 check</span>
+  <a href="#check" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">adb devices</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhfZVS.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhfZVS.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhfZVS.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhfZVS.jpg" alt="https://i.imgtg.com/2023/07/25/OhfZVS.jpg" srcset="https://i.imgtg.com/2023/07/25/OhfZVS.jpg?size=small, https://i.imgtg.com/2023/07/25/OhfZVS.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhfZVS.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhfZVS.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a>
+// Try repeating previous steps if something happens to work. Settings may turn off wireless debugging sometimes after the first pairing.</p>
+<h3 id="fix" class="heading-element"><span>1.10 Fix</span>
+  <a href="#fix" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Finally fix phantom issue with this command</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">adb <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>shell <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>device<span class="se">\_</span>config <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>put activity<span class="se">\_</span>manager <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>max<span class="se">\_</span>phantom<span class="se">\_</span>processes <span class="m">214181594</span>
+</span></span><span class="line"><span class="cl">adb shell device<span class="se">\_</span>config <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>set<span class="se">\_</span>sync<span class="se">\_</span>disabled<span class="se">\_</span>for<span class="se">\_</span>tests persistent</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a class="lightgallery" href="https://i.imgtg.com/2023/07/25/OhfgrC.jpg?size=large" data-thumbnail="https://i.imgtg.com/2023/07/25/OhfgrC.jpg?size=small" data-sub-html="<h2>https://i.imgtg.com/2023/07/25/OhfgrC.jpg</h2>"><img loading="lazy" src="https://i.imgtg.com/2023/07/25/OhfgrC.jpg" alt="https://i.imgtg.com/2023/07/25/OhfgrC.jpg" srcset="https://i.imgtg.com/2023/07/25/OhfgrC.jpg?size=small, https://i.imgtg.com/2023/07/25/OhfgrC.jpg?size=medium 1.5x, https://i.imgtg.com/2023/07/25/OhfgrC.jpg?size=large 2x" data-title="https://i.imgtg.com/2023/07/25/OhfgrC.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a></p>
+<h3 id="side-effects" class="heading-element"><span>1.11 Side Effects</span>
+  <a href="#side-effects" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>Increasing phantom process limit causes more process-heavy apps other than termux to run in the background which could cause performance issues when dealing with games or heavy daily drive usage in mid-range phones.</p>
+<p>when you feel the stutter and want to make things back to normal use this command.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">adb shell device<span class="se">\_</span>config <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>set<span class="se">\_</span>sync<span class="se">\_</span>disabled<span class="se">\_</span>for<span class="se">\_</span>tests none</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="其他文章" class="heading-element"><span>1.12 其他文章</span>
+  <a href="#%e5%85%b6%e4%bb%96%e6%96%87%e7%ab%a0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><a href="https://mi.mbd.baidu.com/r/SuWg6vmK7m?f=cp"target="_blank" rel="external nofollow noopener noreferrer">完美解决安卓12 PhantomProcessKiller的办法<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+]]></description>
+</item>
+</channel>
+</rss>
